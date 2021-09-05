@@ -19,6 +19,7 @@ let package = Package(
             name: "XID",
             dependencies: [
                 .product(name: "Base32", package: "base32-swift"),
+                .product(name: "ChaCha", package: "chacha-rng-swift"),
                 .product(name: "Xoodyak", package: "xoodyak-swift"),
             ]),
         .testTarget(
