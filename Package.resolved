@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "base32-swift",
+        "repositoryURL": "https://github.com/nixberg/base32-swift",
+        "state": {
+          "branch": null,
+          "revision": "e1ce775d30d74465816ad5ba1799e29cd930a3b4",
+          "version": "0.4.0"
+        }
+      },
+      {
+        "package": "chacha-rng-swift",
+        "repositoryURL": "https://github.com/nixberg/chacha-rng-swift",
+        "state": {
+          "branch": null,
+          "revision": "e4c27fec6d736453511eabc7f02decebd837d5a6",
+          "version": "0.7.0"
+        }
+      },
+      {
+        "package": "subtle-swift",
+        "repositoryURL": "https://github.com/nixberg/subtle-swift",
+        "state": {
+          "branch": null,
+          "revision": "c71c45c0cabbd1809ebaf3b328684b04bac1c851",
+          "version": "0.10.0"
+        }
+      },
+      {
+        "package": "xoodyak-swift",
+        "repositoryURL": "https://github.com/nixberg/xoodyak-swift",
+        "state": {
+          "branch": null,
+          "revision": "5f43d30b301e6791f27b2782e3e1671788610bce",
+          "version": "0.2.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
