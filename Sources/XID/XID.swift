@@ -59,13 +59,18 @@ public typealias Timestamp = Int64
 
 extension Timestamp {
     public static var now: Self {
-        if #available(macOS 10.12, *) {
-            let timestamp = clock_gettime_nsec_np(CLOCK_REALTIME)
-            if timestamp != 0 {
-                return Self(timestamp)
-            }
+        #if os(macOS)
+        
+        guard #available(macOS 10.12, *) else {
+            return Self(Date().timeIntervalSince1970 * 1e9)
         }
-        return Self(Date().timeIntervalSince1970 * 1e9)
+        return Self(clock_gettime_nsec_np(CLOCK_REALTIME))
+        
+        #else //#elseif os(Linux)
+        
+        Self(Date().timeIntervalSince1970 * 1e9)
+        
+        #endif
     }
     
     var offsetBinary: UInt64 {
