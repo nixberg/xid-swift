@@ -12,7 +12,7 @@ final class XIDTests: XCTestCase {
         XCTAssertNil(Hash(String(TimeAndHash(hashing: "".utf8))))
         XCTAssertNil(Hash(String(TimeAndRandom())))
         
-        try genericCodableTest(with: Hash(hashing: "Codable".utf8))
+        try codableTest(with: Hash(hashing: "Codable".utf8))
     }
     
     func testRandom() throws {
@@ -29,7 +29,7 @@ final class XIDTests: XCTestCase {
         XCTAssertNil(Random(String(TimeAndHash(hashing: "".utf8))))
         XCTAssertNil(Random(String(TimeAndRandom())))
         
-        try genericCodableTest(with: Random())
+        try codableTest(with: Random())
     }
     
     func testTimeAndHash() throws {
@@ -47,7 +47,7 @@ final class XIDTests: XCTestCase {
         XCTAssertNil(TimeAndHash(String(Random())))
         XCTAssertNil(TimeAndHash(String(TimeAndRandom())))
         
-        try genericCodableTest(with: TimeAndHash(hashing: "Codable".utf8))
+        try codableTest(with: TimeAndHash(hashing: "Codable".utf8))
     }
     
     func testTimeAndRandom() throws {
@@ -67,16 +67,19 @@ final class XIDTests: XCTestCase {
         XCTAssertNil(TimeAndRandom(String(Random())))
         XCTAssertNil(TimeAndRandom(String(TimeAndHash(hashing: "".utf8))))
         
-        try genericCodableTest(with: TimeAndRandom())
+        try codableTest(with: TimeAndRandom())
     }
 }
 
-@_transparent
-fileprivate func genericCodableTest<XID: XIDProtocol>(with xid: XID) throws {
+fileprivate func codableTest<XID: XIDProtocol>(
+    with xid: XID,
+    file: StaticString = #filePath,
+    line: UInt = #line
+) throws {
     let json = Data("\"\(xid)\"".utf8)
     
     let decoded = try JSONDecoder().decode(XID.self, from: json)
-    XCTAssertEqual(decoded, xid)
+    XCTAssertEqual(decoded, xid, file: file, line: line)
     
-    XCTAssertEqual(try JSONEncoder().encode(decoded), json)
+    XCTAssertEqual(try JSONEncoder().encode(decoded), json, file: file, line: line)
 }
