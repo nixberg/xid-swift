@@ -60,16 +60,13 @@ public typealias Timestamp = Int64
 extension Timestamp {
     public static var now: Self {
         #if os(macOS)
-        
-        guard #available(macOS 10.12, *) else {
-            return Self(Date().timeIntervalSince1970 * 1e9)
-        }
-        return Self(clock_gettime_nsec_np(CLOCK_REALTIME))
-        
-        #else //#elseif os(Linux)
-        
+        Self(clock_gettime_nsec_np(CLOCK_REALTIME))
+        #elseif os(Linux)
+        var ts = timespec()
+        precondition(clock_gettime(CLOCK_REALTIME, &ts) == 0)
+        return Int64(ts.tv_sec) * 1_000_000_000 + Int64(ts.tv_nsec)
+        #else
         Self(Date().timeIntervalSince1970 * 1e9)
-        
         #endif
     }
     

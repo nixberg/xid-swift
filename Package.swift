@@ -4,6 +4,9 @@ import PackageDescription
 
 let package = Package(
     name: "xid-swift",
+    platforms: [
+        .macOS(.v10_12)
+    ],
     products: [
         .library(
             name: "XID",
