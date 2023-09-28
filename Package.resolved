@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/nixberg/base32-swift",
         "state": {
           "branch": null,
-          "revision": "e1ce775d30d74465816ad5ba1799e29cd930a3b4",
-          "version": "0.4.0"
+          "revision": "5f740fd7f86ddd719f2af6c4dab21c4920a590e9",
+          "version": "0.6.0"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/nixberg/subtle-swift",
         "state": {
           "branch": null,
-          "revision": "c71c45c0cabbd1809ebaf3b328684b04bac1c851",
-          "version": "0.10.0"
+          "revision": "bfe1e1a45656c05a89e8a677b3ee5215eeaef18e",
+          "version": "0.11.0"
         }
       },
       {
