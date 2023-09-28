@@ -20,6 +20,24 @@
         }
       },
       {
+        "package": "crypto-traits-swift",
+        "repositoryURL": "https://github.com/nixberg/crypto-traits-swift",
+        "state": {
+          "branch": null,
+          "revision": "edbb488fbe7a09572e889e026a5aa07e0feb1198",
+          "version": "0.2.1"
+        }
+      },
+      {
+        "package": "endianbytes-swift",
+        "repositoryURL": "https://github.com/nixberg/endianbytes-swift",
+        "state": {
+          "branch": null,
+          "revision": "c58c2275ba94c50de2573c5a1df3f5ceb2089cb4",
+          "version": "0.5.1"
+        }
+      },
+      {
         "package": "subtle-swift",
         "repositoryURL": "https://github.com/nixberg/subtle-swift",
         "state": {
@@ -33,8 +51,8 @@
         "repositoryURL": "https://github.com/nixberg/xoodyak-swift",
         "state": {
           "branch": null,
-          "revision": "5f43d30b301e6791f27b2782e3e1671788610bce",
-          "version": "0.2.0"
+          "revision": "47fc202d90d8f2c5af1a5a6b7e0698599a147c52",
+          "version": "0.3.1"
         }
       }
     ]
